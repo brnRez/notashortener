@@ -12,6 +12,8 @@ Following the steps proposed in the [back-end br repository](https://github.com/
 
 ## Tools Used
 
+- Java 17, base language
+- Spring Framework, along with its tools (Lombok, JPA and WebTools)
 - SQL Database: PostgreSQL for data storaging;
 - Docker Compose, containing the postgres latest version image;
 - Apache Commons Lang3, for generating a random string to build the shortened url;
