@@ -25,6 +25,12 @@ public class LinksService {
     public String generateRandomUrl(){
         return RandomStringUtils.randomAlphanumeric(5,10);
     }
+    public String checksHttp(String originalUrl){
+        if (!originalUrl.matches("^(http|https)://.*")){
+            return "https://" + originalUrl;
+        }
+        return originalUrl;
+    }
 
     public String generateQrCodeFilePath(String shortenedUrl) throws WriterException, IOException {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
@@ -41,7 +47,7 @@ public class LinksService {
 
     public Links shortenUrl(String originalUrl) throws IOException, WriterException {
         Links link = new Links();
-        link.setOriginalUrl(originalUrl);
+        link.setOriginalUrl(checksHttp(originalUrl));
         link.setShortenedUrl(generateRandomUrl());
         link.setInitialDate(LocalDateTime.now());
         link.setQrCodePath(generateQrCodeFilePath(link.getShortenedUrl()));
