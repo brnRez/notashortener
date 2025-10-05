@@ -39,7 +39,7 @@ public class LinksController {
                 link.getId(),
                 link.getOriginalUrl(),
                 generateUserRedirectUrl,
-                link.getQrCodePath(),
+                link.getQrCodeUrl(),
                 link.getInitialDate()
         );
         return ResponseEntity.status(HttpStatus.CREATED).body(response);

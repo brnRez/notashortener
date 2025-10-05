@@ -22,7 +22,7 @@ public class Links {
 
     private String originalUrl;
     private String shortenedUrl;
-    private String qrCodePath;
+    private String qrCodeUrl;
     private LocalDateTime initialDate;
 
 
