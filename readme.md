@@ -6,7 +6,7 @@ Following the steps proposed in the [back-end br repository](https://github.com/
 
 - Generates a shortened Url based on the user's provided one;
 - Checks if the provided Url contains the "http" prefix, and if it doesn't, adds it;
-- Alongside the generated shortened Url, it provides a QR Code containing it too;
+- Alongside the generated shortened Url, provides a QR Code generated from it as well;
 - When the user access the shortened Url, it redirects him to the original Url provided before.
 
 
@@ -18,9 +18,21 @@ Following the steps proposed in the [back-end br repository](https://github.com/
 - Docker Compose, containing the postgres latest version image;
 - Apache Commons Lang3, for generating a random string to build the shortened url;
 - Google ZXing, for QRCode generation.
+- AWS S3 Client, for storaging.
 
 ## Endpoints
 
 - `/donotshorten` : to provide the selected url for shortening;
 - `/r/{shortenedUrl}` : for redirecting the user to the original Url based on the shortened string;
-- `/qr-codes/{shortenedUrl}` : to provide the shortened Url QR Code image download.
+- `/qr-codes/{shortenedUrl}` : Deprecated, as the API now uses Cloud Storaging.
+
+## Usage
+
+To test it, after successfully running the DB from the docker-compose file, you can send a POST request through your preferred tool
+providing a JSON file with the "originalUrl" attribute as a payload. By that, the response should be the generated info (Shortened Url, as well as the generated QR Code).
+
+I've recorded a quick showcase on how the API works, you can watch it by [clicking here](youtube.com)
+
+## Insights
+
+As this project was made only for studying purposes, it has reached its objectives, as i've acquired some experience with containerization tools (docker), had my first contact with the AWS platform as well as successfully installed its CLI app. In conclusion, this project gave me an overall knowledge in programming logic, Regex, cloud tools and design patterns. Can't wait to jump into the next one! 
