@@ -22,7 +22,7 @@ Following the steps proposed in the [back-end br repository](https://github.com/
 
 ## Endpoints
 
-- `/donotshorten` : to provide the selected url for shortening;
+- `/do-not-shorten` : to provide the selected url for shortening;
 - `/r/{shortenedUrl}` : for redirecting the user to the original Url based on the shortened string;
 - `/qr-codes/{shortenedUrl}` : Deprecated, as the API now uses Cloud Storaging.
 
@@ -31,7 +31,7 @@ Following the steps proposed in the [back-end br repository](https://github.com/
 To test it, after successfully running the DB from the docker-compose file, you can send a POST request through your preferred tool
 providing a JSON file with the "originalUrl" attribute as a payload. By that, the response should be the generated info (Shortened Url, as well as the generated QR Code).
 
-I've recorded a quick showcase on how the API works, you can watch it by [clicking here](youtube.com)
+I've recorded a quick showcase on how the API works, you can watch it by [clicking here](https://youtu.be/vwzGJwOsxRE)   
 
 ## Insights
 
